@@ -1,7 +1,141 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "starwars": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/starwars",
+      "sourceRoot": "apps/starwars/src",
+      "prefix": "starwars-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/starwars",
+            "index": "apps/starwars/src/index.html",
+            "main": "apps/starwars/src/main.ts",
+            "polyfills": "apps/starwars/src/polyfills.ts",
+            "tsConfig": "apps/starwars/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/starwars/src/favicon.ico",
+              "apps/starwars/src/assets"
+            ],
+            "styles": ["apps/starwars/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/starwars/src/environments/environment.ts",
+                  "with": "apps/starwars/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "starwars:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "starwars:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "starwars:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/starwars/tsconfig.app.json",
+              "apps/starwars/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/starwars/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/starwars/jest.config.js",
+            "tsConfig": "apps/starwars/tsconfig.spec.json",
+            "setupFile": "apps/starwars/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "starwars-e2e": {
+      "root": "apps/starwars-e2e",
+      "sourceRoot": "apps/starwars-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/starwars-e2e/cypress.json",
+            "tsConfig": "apps/starwars-e2e/tsconfig.e2e.json",
+            "devServerTarget": "starwars:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "starwars:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/starwars-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/starwars-e2e/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "starwars"
 }

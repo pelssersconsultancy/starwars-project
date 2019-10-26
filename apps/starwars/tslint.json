@@ -1,0 +1,7 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "starwarsProject", "camelCase"],
+    "component-selector": [true, "element", "starwars-project", "kebab-case"]
+  }
+}
