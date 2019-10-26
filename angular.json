@@ -130,6 +130,37 @@
           }
         }
       }
+    },
+    "starwars-app-shell": {
+      "projectType": "library",
+      "root": "libs/starwars/app-shell",
+      "sourceRoot": "libs/starwars/app-shell/src",
+      "prefix": "starwars-project",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars/app-shell/tsconfig.lib.json",
+              "libs/starwars/app-shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/starwars/app-shell/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars/app-shell/jest.config.js",
+            "tsConfig": "libs/starwars/app-shell/tsconfig.spec.json",
+            "setupFile": "libs/starwars/app-shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "sass"
+        }
+      }
     }
   },
   "cli": {

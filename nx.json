@@ -13,6 +13,9 @@
     },
     "starwars": {
       "tags": []
+    },
+    "starwars-app-shell": {
+      "tags": ["scope:starwars", "type:feature"]
     }
   }
 }
