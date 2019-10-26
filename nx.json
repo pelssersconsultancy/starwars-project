@@ -16,6 +16,9 @@
     },
     "starwars-app-shell": {
       "tags": ["scope:starwars", "type:feature"]
+    },
+    "starwars-layout": {
+      "tags": ["scope:starwars", "type:ui"]
     }
   }
 }

@@ -161,6 +161,37 @@
           "styleext": "sass"
         }
       }
+    },
+    "starwars-layout": {
+      "projectType": "library",
+      "root": "libs/starwars/layout",
+      "sourceRoot": "libs/starwars/layout/src",
+      "prefix": "sw",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars/layout/tsconfig.lib.json",
+              "libs/starwars/layout/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/starwars/layout/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars/layout/jest.config.js",
+            "tsConfig": "libs/starwars/layout/tsconfig.spec.json",
+            "setupFile": "libs/starwars/layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "sass"
+        }
+      }
     }
   },
   "cli": {

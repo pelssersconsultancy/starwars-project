@@ -18,7 +18,8 @@
     "paths": {
       "@starwars-project/starwars/app-shell": [
         "libs/starwars/app-shell/src/index.ts"
-      ]
+      ],
+      "@starwars-project/starwars/layout": ["libs/starwars/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
