@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PlanetDetailsComponent } from './containers/planet-details/planet-details.component';
+import { PlanetOverviewComponent } from './containers/planet-overview/planet-overview.component';
 
 @NgModule({
   imports: [
@@ -10,15 +11,13 @@ import { PlanetDetailsComponent } from './containers/planet-details/planet-detai
       {
         path: '',
         pathMatch: 'full',
-        component: PlanetDetailsComponent   //TODO: replace this
+        component: PlanetOverviewComponent
       },
       { path: ':id', pathMatch: 'full', component: PlanetDetailsComponent }
     ])
   ],
-  declarations: [PlanetDetailsComponent]
+  declarations: [PlanetDetailsComponent, PlanetOverviewComponent]
 })
 export class StarwarsPlanetsFeaturePlanetsModule {
-  constructor() {
-    console.log('StarwarsPlanetsFeaturePlanetsModule constructed')
-  }
+  constructor() { }
 }

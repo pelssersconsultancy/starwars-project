@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'sw-planet-details',
-  templateUrl: './planet-details.component.html',
-  styleUrls: ['./planet-details.component.scss'],
+  selector: 'sw-planet-overview',
+  templateUrl: './planet-overview.component.html',
+  styleUrls: ['./planet-overview.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PlanetDetailsComponent implements OnInit {
+export class PlanetOverviewComponent implements OnInit {
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }
