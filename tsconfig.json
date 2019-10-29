@@ -26,6 +26,9 @@
       "@swapi/planets/*": ["libs/starwars-api/planets/src/*"],
       "@starwars-project/starwars-api/models/planets": [
         "libs/starwars-api/models/planets/src/index.ts"
+      ],
+      "@starwars-project/starwars/planets/feature-planets": [
+        "libs/starwars/planets/feature-planets/src/index.ts"
       ]
     }
   },

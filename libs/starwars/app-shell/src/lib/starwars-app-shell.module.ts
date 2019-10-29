@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
-export const starwarsAppShellRoutes: Route[] = [];
 
 @NgModule({
-  imports: [CommonModule, RouterModule]
+  imports: [
+    CommonModule,
+     RouterModule.forChild([
+      {
+        path: 'planets',
+        loadChildren: () => import('@starwars-project/starwars/planets/feature-planets').then(m => m.StarwarsPlanetsFeaturePlanetsModule),
+      },
+     ])
+  ]
 })
 export class StarwarsAppShellModule {}

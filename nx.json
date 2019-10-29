@@ -25,6 +25,9 @@
     },
     "starwars-api-models-planets": {
       "tags": ["scope:starwars-api", "type:model"]
+    },
+    "starwars-planets-feature-planets": {
+      "tags": ["scope:starwars", "type:feature"]
     }
   }
 }
