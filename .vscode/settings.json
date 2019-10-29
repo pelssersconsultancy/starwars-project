@@ -2,6 +2,7 @@
     "cSpell.words": [
         "Starwars"
     ],
-    "jest.autoEnable": false
+    "jest.autoEnable": false,
+    "vsicons.presets.angular": true
 
 }

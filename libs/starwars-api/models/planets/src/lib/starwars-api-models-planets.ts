@@ -1,4 +1,4 @@
-export interface Planet {
+export interface PlanetModel {
   /**
    * The name of this planet.
    */

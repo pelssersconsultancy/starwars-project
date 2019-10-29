@@ -248,9 +248,9 @@
         }
       }
     },
-    "starwars-api-dto-planets": {
-      "root": "libs/starwars-api/dto-planets",
-      "sourceRoot": "libs/starwars-api/dto-planets/src",
+    "starwars-api-models-planets": {
+      "root": "libs/starwars-api/models/planets",
+      "sourceRoot": "libs/starwars-api/models/planets/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -258,20 +258,20 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/starwars-api/dto-planets/tsconfig.lib.json",
-              "libs/starwars-api/dto-planets/tsconfig.spec.json"
+              "libs/starwars-api/models/planets/tsconfig.lib.json",
+              "libs/starwars-api/models/planets/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/starwars-api/dto-planets/**"
+              "!libs/starwars-api/models/planets/**"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/starwars-api/dto-planets/jest.config.js",
-            "tsConfig": "libs/starwars-api/dto-planets/tsconfig.spec.json"
+            "jestConfig": "libs/starwars-api/models/planets/jest.config.js",
+            "tsConfig": "libs/starwars-api/models/planets/tsconfig.spec.json"
           }
         }
       }

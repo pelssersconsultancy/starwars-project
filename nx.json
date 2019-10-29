@@ -23,7 +23,7 @@
     "starwars-api": {
       "tags": ["scope:starwars-api", "type:app"]
     },
-    "starwars-api-dto-planets": {
+    "starwars-api-models-planets": {
       "tags": ["scope:starwars-api", "type:model"]
     }
   }
