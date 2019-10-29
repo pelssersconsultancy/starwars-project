@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "planets": {
+      "type": "library",
+      "root": "libs/starwars-api/planets",
+      "entryFile": "index",
+      "sourceRoot": "libs/starwars-api/planets/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/starwars-api/planets/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
