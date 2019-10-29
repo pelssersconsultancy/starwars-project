@@ -92,10 +92,7 @@
               "apps/starwars/tsconfig.app.json",
               "apps/starwars/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/starwars/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/starwars/**"]
           }
         },
         "test": {
@@ -129,13 +126,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/starwars-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/starwars-e2e/**"
-            ]
+            "tsConfig": ["apps/starwars-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/starwars-e2e/**"]
           }
         }
       }
@@ -153,10 +145,7 @@
               "libs/starwars/app-shell/tsconfig.lib.json",
               "libs/starwars/app-shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/starwars/app-shell/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/starwars/app-shell/**"]
           }
         },
         "test": {
@@ -187,10 +176,7 @@
               "libs/starwars/layout/tsconfig.lib.json",
               "libs/starwars/layout/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/starwars/layout/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/starwars/layout/**"]
           }
         },
         "test": {
@@ -221,9 +207,7 @@
             "outputPath": "dist/apps/starwars-api",
             "main": "apps/starwars-api/src/main.ts",
             "tsConfig": "apps/starwars-api/tsconfig.app.json",
-            "assets": [
-              "apps/starwars-api/src/assets"
-            ]
+            "assets": ["apps/starwars-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -252,10 +236,7 @@
               "apps/starwars-api/tsconfig.app.json",
               "apps/starwars-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/starwars-api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/starwars-api/**"]
           }
         },
         "test": {
@@ -263,6 +244,34 @@
           "options": {
             "jestConfig": "apps/starwars-api/jest.config.js",
             "tsConfig": "apps/starwars-api/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "starwars-api-dto-planets": {
+      "root": "libs/starwars-api/dto-planets",
+      "sourceRoot": "libs/starwars-api/dto-planets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars-api/dto-planets/tsconfig.lib.json",
+              "libs/starwars-api/dto-planets/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars-api/dto-planets/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars-api/dto-planets/jest.config.js",
+            "tsConfig": "libs/starwars-api/dto-planets/tsconfig.spec.json"
           }
         }
       }
