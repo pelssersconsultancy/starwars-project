@@ -70,7 +70,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "starwars:build"
+            "browserTarget": "starwars:build",
+            "proxyConfig": "apps/starwars/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -91,7 +92,10 @@
               "apps/starwars/tsconfig.app.json",
               "apps/starwars/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/starwars/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/starwars/**"
+            ]
           }
         },
         "test": {
@@ -125,8 +129,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/starwars-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/starwars-e2e/**"]
+            "tsConfig": [
+              "apps/starwars-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/starwars-e2e/**"
+            ]
           }
         }
       }
@@ -144,7 +153,10 @@
               "libs/starwars/app-shell/tsconfig.lib.json",
               "libs/starwars/app-shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/starwars/app-shell/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars/app-shell/**"
+            ]
           }
         },
         "test": {
@@ -175,7 +187,10 @@
               "libs/starwars/layout/tsconfig.lib.json",
               "libs/starwars/layout/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/starwars/layout/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars/layout/**"
+            ]
           }
         },
         "test": {
@@ -190,6 +205,65 @@
       "schematics": {
         "@nrwl/angular:component": {
           "styleext": "sass"
+        }
+      }
+    },
+    "starwars-api": {
+      "root": "apps/starwars-api",
+      "sourceRoot": "apps/starwars-api/src",
+      "projectType": "application",
+      "prefix": "starwars-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/starwars-api",
+            "main": "apps/starwars-api/src/main.ts",
+            "tsConfig": "apps/starwars-api/tsconfig.app.json",
+            "assets": [
+              "apps/starwars-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/starwars-api/src/environments/environment.ts",
+                  "with": "apps/starwars-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "starwars-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/starwars-api/tsconfig.app.json",
+              "apps/starwars-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/starwars-api/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/starwars-api/jest.config.js",
+            "tsConfig": "apps/starwars-api/tsconfig.spec.json"
+          }
         }
       }
     }

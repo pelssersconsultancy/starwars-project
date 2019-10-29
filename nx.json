@@ -15,10 +15,22 @@
       "tags": []
     },
     "starwars-app-shell": {
-      "tags": ["scope:starwars", "type:feature"]
+      "tags": [
+        "scope:starwars",
+        "type:feature"
+      ]
     },
     "starwars-layout": {
-      "tags": ["scope:starwars", "type:ui"]
+      "tags": [
+        "scope:starwars",
+        "type:ui"
+      ]
+    },
+    "starwars-api": {
+      "tags": [
+        "scope:starwars-api",
+        "type:app"
+      ]
     }
   }
 }
