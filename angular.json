@@ -309,6 +309,40 @@
           "styleext": "sass"
         }
       }
+    },
+    "starwars-shared-state-planets": {
+      "projectType": "library",
+      "root": "libs/starwars/shared/state/planets",
+      "sourceRoot": "libs/starwars/shared/state/planets/src",
+      "prefix": "starwars-project",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars/shared/state/planets/tsconfig.lib.json",
+              "libs/starwars/shared/state/planets/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars/shared/state/planets/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars/shared/state/planets/jest.config.js",
+            "tsConfig": "libs/starwars/shared/state/planets/tsconfig.spec.json",
+            "setupFile": "libs/starwars/shared/state/planets/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

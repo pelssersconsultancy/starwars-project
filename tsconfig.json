@@ -29,6 +29,9 @@
       ],
       "@starwars-project/starwars/planets/feature-planets": [
         "libs/starwars/planets/feature-planets/src/index.ts"
+      ],
+      "@starwars-project/starwars/shared/state/planets": [
+        "libs/starwars/shared/state/planets/src/index.ts"
       ]
     }
   },

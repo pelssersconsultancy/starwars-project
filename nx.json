@@ -28,6 +28,9 @@
     },
     "starwars-planets-feature-planets": {
       "tags": ["scope:starwars", "type:feature"]
+    },
+    "starwars-shared-state-planets": {
+      "tags": ["scope:shared", "type:entity-state"]
     }
   }
 }
