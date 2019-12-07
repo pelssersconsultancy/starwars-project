@@ -32,6 +32,9 @@
       ],
       "@starwars-project/starwars/shared/state/planets": [
         "libs/starwars/shared/state/planets/src/index.ts"
+      ],
+      "@starwars-project/starwars/planets/data-access-entities": [
+        "libs/starwars/planets/data-access-entities/src/index.ts"
       ]
     }
   },

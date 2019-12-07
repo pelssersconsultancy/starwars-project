@@ -31,6 +31,9 @@
     },
     "starwars-shared-state-planets": {
       "tags": ["scope:shared", "type:entity-state"]
+    },
+    "starwars-planets-data-access-entities": {
+      "tags": ["scope:starwars", "type:data-access-entitities"]
     }
   }
 }

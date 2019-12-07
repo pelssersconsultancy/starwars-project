@@ -343,6 +343,40 @@
           "styleext": "scss"
         }
       }
+    },
+    "starwars-planets-data-access-entities": {
+      "projectType": "library",
+      "root": "libs/starwars/planets/data-access-entities",
+      "sourceRoot": "libs/starwars/planets/data-access-entities/src",
+      "prefix": "starwars-project",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars/planets/data-access-entities/tsconfig.lib.json",
+              "libs/starwars/planets/data-access-entities/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars/planets/data-access-entities/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars/planets/data-access-entities/jest.config.js",
+            "tsConfig": "libs/starwars/planets/data-access-entities/tsconfig.spec.json",
+            "setupFile": "libs/starwars/planets/data-access-entities/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

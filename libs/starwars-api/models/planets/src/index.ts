@@ -1,1 +1,3 @@
-export * from './lib/starwars-api-models-planets';
+import * as PlanetsAPI from './lib';
+
+export { PlanetsAPI };
