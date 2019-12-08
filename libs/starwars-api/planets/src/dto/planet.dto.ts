@@ -1,10 +1,10 @@
 import { Exclude, Expose } from 'class-transformer';
 import { ApiModelProperty } from '@nestjs/swagger';
 
-import { PlanetModel } from '@starwars-project/starwars-api/models/planets';
+import { PlanetsAPI } from '@starwars-project/starwars-api/models/planets';
 
 @Exclude()
-export class PlanetDto implements PlanetModel {
+export class PlanetDto implements PlanetsAPI.PlanetModel {
   @Expose()
   @ApiModelProperty({ example: 'Tatooine' })
   name: string;

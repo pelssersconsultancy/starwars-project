@@ -3,10 +3,18 @@ import { PlanetsService } from './planets.service';
 import { Observable } from 'rxjs';
 import { PlanetDto } from './dto/planet.dto';
 import { ApiOkResponse, ApiNotFoundResponse, ApiOperation } from '@nestjs/swagger';
+import { PagedPlanetsDto } from './dto/paged-planets.dto';
 
 @Controller('v1.0/planets')
 export class PlanetsController {
   constructor(private readonly planetService: PlanetsService) {}
+
+  @Get()
+  @ApiOperation({ title: 'Get all planet resources'})
+  @ApiOkResponse({ description: 'Planets found', type: PagedPlanetsDto })
+  getPlanets(): Observable<PagedPlanetsDto> {
+    return this.planetService.getPlanets();
+  }
 
   @Get(':id')
   @ApiOperation({ title: 'Get a specific planet resource'})

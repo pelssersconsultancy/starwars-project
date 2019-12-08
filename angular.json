@@ -377,6 +377,34 @@
           "styleext": "scss"
         }
       }
+    },
+    "starwars-api-models-shared": {
+      "root": "libs/starwars-api/models/shared",
+      "sourceRoot": "libs/starwars-api/models/shared/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/starwars-api/models/shared/tsconfig.lib.json",
+              "libs/starwars-api/models/shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/starwars-api/models/shared/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/starwars-api/models/shared/jest.config.js",
+            "tsConfig": "libs/starwars-api/models/shared/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

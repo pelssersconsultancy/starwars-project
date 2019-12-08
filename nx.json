@@ -34,6 +34,9 @@
     },
     "starwars-planets-data-access-entities": {
       "tags": ["scope:starwars", "type:data-access-entitities"]
+    },
+    "starwars-api-models-shared": {
+      "tags": ["scope:starwars-api", "type:model"]
     }
   }
 }

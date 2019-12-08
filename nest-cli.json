@@ -8,6 +8,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/starwars-api/planets/tsconfig.lib.json"
       }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/starwars-api/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/starwars-api/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/starwars-api/shared/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {

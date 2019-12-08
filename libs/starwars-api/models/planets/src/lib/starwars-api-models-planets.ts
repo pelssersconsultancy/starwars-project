@@ -1,3 +1,7 @@
+import { SharedAPI } from '@starwars-project/starwars-api/models/shared';
+
+export interface PagedPlanetsModel extends SharedAPI.PagingResult<PlanetModel> {}
+
 export interface PlanetModel {
   /**
    * The name of this planet.
