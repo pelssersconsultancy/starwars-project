@@ -6,6 +6,7 @@ import { ClarityModule } from '@clr/angular';
 
 import { StarwarsAppShellModule } from '@starwars-project/starwars/app-shell';
 import { StarwarsLayoutModule } from '@starwars-project/starwars/layout';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,7 @@ import { StarwarsLayoutModule } from '@starwars-project/starwars/layout';
     StarwarsAppShellModule,
     StarwarsLayoutModule
   ],
-  providers: [],
+  providers: [{ provide: 'apiEndpoint', useValue: environment.apiEndpoint }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
