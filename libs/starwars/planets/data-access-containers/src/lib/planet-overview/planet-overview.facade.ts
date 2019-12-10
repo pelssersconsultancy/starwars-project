@@ -5,17 +5,17 @@ import { loadPlanetsRequested } from './planet-overview.actions';
 import { Observable } from 'rxjs';
 import { PlanetsAPI } from '@starwars-project/starwars-api/models/planets';
 
-import { PlanetsSelectors } from '@starwars-project/starwars/planets/data-access-entities'
+import { selectPlanetOverviewData } from './planet-overview.selectors';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PlanetOverviewFacade {
 
-  planets$: Observable<PlanetsAPI.PlanetModel[]>;
+  planetOverviewData$: Observable<{planets: PlanetsAPI.PlanetModel[], isLoading: boolean, error: any }>;
 
   constructor(private store: Store<PlanetOverviewState>) {
-    this.planets$ = this.store.select(PlanetsSelectors.selectAllPlanets)
+    this.planetOverviewData$ = this.store.select(selectPlanetOverviewData);
   }
 
   requestPlanets(): void {

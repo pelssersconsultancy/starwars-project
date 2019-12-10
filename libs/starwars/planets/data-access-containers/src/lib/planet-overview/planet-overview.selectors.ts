@@ -1,5 +1,7 @@
 import { createSelector } from '@ngrx/store';
 
+import { PlanetsSelectors } from '@starwars-project/starwars/planets/data-access-entities'
+
 import { selectPlanetContainersState } from '../planet-container-state';
 
 const selectPlanetOverviewState = createSelector(
@@ -7,12 +9,19 @@ const selectPlanetOverviewState = createSelector(
   planetContainerState => planetContainerState.planetOverview,
 );
 
-export const selectIsLoading = createSelector(
+const selectIsLoading = createSelector(
   selectPlanetOverviewState,
   planetOverviewState => planetOverviewState.loading
 );
 
-export const selectError = createSelector(
+const selectError = createSelector(
   selectPlanetOverviewState,
   planetOverviewState => planetOverviewState.error
+);
+
+export const selectPlanetOverviewData = createSelector(
+  PlanetsSelectors.selectAllPlanets,
+  selectIsLoading,
+  selectError,
+  (planets, isLoading, error) => ({ planets, isLoading, error })
 );
