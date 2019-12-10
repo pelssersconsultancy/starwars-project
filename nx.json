@@ -37,6 +37,9 @@
     },
     "starwars-api-models-shared": {
       "tags": ["scope:starwars-api", "type:model"]
+    },
+    "starwars-planets-data-access-containers": {
+      "tags": ["scope:starwars", "type:data-access-containers"]
     }
   }
 }

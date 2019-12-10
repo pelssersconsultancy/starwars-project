@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 
+import { PlanetOverviewFacade } from '@starwars-project/starwars/planets/data-access-containers';
+
 @Component({
   selector: 'sw-planet-overview',
   templateUrl: './planet-overview.component.html',
@@ -9,9 +11,11 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 })
 export class PlanetOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private planetOverviewFacade: PlanetOverviewFacade) { }
 
   ngOnInit() {
+    this.planetOverviewFacade.requestPlanets();
+
   }
 
 }

@@ -10,13 +10,8 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -27,12 +22,8 @@
       "@starwars-project/starwars/layout": [
         "libs/starwars/layout/src/index.ts"
       ],
-      "@swapi/planets": [
-        "libs/starwars-api/planets/src"
-      ],
-      "@swapi/planets/*": [
-        "libs/starwars-api/planets/src/*"
-      ],
+      "@swapi/planets": ["libs/starwars-api/planets/src"],
+      "@swapi/planets/*": ["libs/starwars-api/planets/src/*"],
       "@starwars-project/starwars-api/models/planets": [
         "libs/starwars-api/models/planets/src/index.ts"
       ],
@@ -48,16 +39,12 @@
       "@starwars-project/starwars-api/models/shared": [
         "libs/starwars-api/models/shared/src/index.ts"
       ],
-      "@swapi/shared": [
-        "libs/starwars-api/shared/src"
-      ],
-      "@swapi/shared/*": [
-        "libs/starwars-api/shared/src/*"
+      "@swapi/shared": ["libs/starwars-api/shared/src"],
+      "@swapi/shared/*": ["libs/starwars-api/shared/src/*"],
+      "@starwars-project/starwars/planets/data-access-containers": [
+        "libs/starwars/planets/data-access-containers/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

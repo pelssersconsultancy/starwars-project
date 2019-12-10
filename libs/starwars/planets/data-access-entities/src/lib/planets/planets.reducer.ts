@@ -2,7 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
 
 import { PlanetsAPI } from '@starwars-project/starwars-api/models/planets';
-import { loadPlanetSucceeded, loadAllPlanetsSucceeded } from './planets.actions';
+import { loadPlanetSucceeded, loadPlanetsSucceeded } from './planets.actions';
 
 export interface PlanetsState extends EntityState<PlanetsAPI.PlanetModel> {}
 
@@ -16,5 +16,5 @@ const initialPlanetsState: PlanetsState = planetsAdapter.getInitialState<Planets
 export const planetsReducer = createReducer(
   initialPlanetsState,
   on(loadPlanetSucceeded, (state, { planet }) => planetsAdapter.upsertOne(planet, state)),
-  on(loadAllPlanetsSucceeded, (state, { planets }) => planetsAdapter.upsertMany(planets, state))
+  on(loadPlanetsSucceeded, (state, { planets }) => planetsAdapter.upsertMany(planets.results, state))
 );

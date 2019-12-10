@@ -5,5 +5,5 @@ export interface PlanetsFeatureState {
   planets: PlanetsState
 }
 
-export const planetsFeatureKey = 'planets-feature';
+export const planetsFeatureKey = 'planets-entities';
 export const selectPlanetsFeatureState = createFeatureSelector<PlanetsFeatureState>(planetsFeatureKey);
