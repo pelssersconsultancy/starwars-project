@@ -1,9 +1,9 @@
 import { PlanetsState } from './planets/planets.reducer';
 import { createFeatureSelector } from '@ngrx/store';
 
-export interface PlanetsFeatureState {
+export interface PlanetEntitiesState {
   planets: PlanetsState
 }
 
-export const planetsFeatureKey = 'planets-entities';
-export const selectPlanetsFeatureState = createFeatureSelector<PlanetsFeatureState>(planetsFeatureKey);
+export const planetsEntitiesKey = 'planets-entities';
+export const selectPlanetEntitiesState = createFeatureSelector<PlanetEntitiesState>(planetsEntitiesKey);

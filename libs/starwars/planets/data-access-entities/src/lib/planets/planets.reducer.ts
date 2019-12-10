@@ -18,3 +18,6 @@ export const planetsReducer = createReducer(
   on(loadPlanetSucceeded, (state, { planet }) => planetsAdapter.upsertOne(planet, state)),
   on(loadPlanetsSucceeded, (state, { planets }) => planetsAdapter.upsertMany(planets.results, state))
 );
+
+const { selectEntities, selectIds, selectAll } = planetsAdapter.getSelectors();
+export const planetAdapterSelectors = { selectEntities, selectIds, selectAll };

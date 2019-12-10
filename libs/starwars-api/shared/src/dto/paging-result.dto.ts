@@ -11,17 +11,15 @@ export class PagingResultDto<T> implements SharedAPI.PagingResult<T> {
   count: number;
 
   @Expose()
-  @ApiModelProperty({ example: 'https://swapi.co/api/planets/?page=3', type: String, nullable: true })
-  next: string | null;
-
+  @ApiModelProperty({ example: 3, type: Number, nullable: true })
+  nextPage: number | null;
 
   @Expose()
-  @ApiModelProperty({ example: 'https://swapi.co/api/planets/?page=1', type: String, nullable: true })
-  previous: string |  null;
+  @ApiModelProperty({ example: 3, type: Number, nullable: true })
+  previousPage: number |  null;
 
 
   @Expose()
   @ApiModelProperty({ isArray: true })
   results: T[];
-
 }

@@ -16,5 +16,3 @@ export const selectError = createSelector(
   selectPlanetOverviewState,
   planetOverviewState => planetOverviewState.error
 );
-
-

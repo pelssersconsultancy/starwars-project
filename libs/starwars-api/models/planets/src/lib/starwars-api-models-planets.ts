@@ -1,5 +1,6 @@
 import { SharedAPI } from '@starwars-project/starwars-api/models/shared';
 
+export interface PagedSwapiPlanetsModel extends SharedAPI.SwapiPagingResult<PlanetModel> {}
 export interface PagedPlanetsModel extends SharedAPI.PagingResult<PlanetModel> {}
 
 export interface PlanetModel {

@@ -1,41 +1,21 @@
-<clr-datagrid>
-  <clr-dg-column>Name</clr-dg-column>
-  <clr-dg-column>Diameter</clr-dg-column>
-  <clr-dg-column>Rotation Period</clr-dg-column>
-  <clr-dg-column>Orbital Period</clr-dg-column>
-  <clr-dg-column>Population</clr-dg-column>
-  <clr-dg-column>Climate</clr-dg-column>
+<ng-container *ngIf="planetOverviewFacade.planets$ | async as planets">
+  <clr-datagrid>
+    <clr-dg-column>Name</clr-dg-column>
+    <clr-dg-column>Diameter</clr-dg-column>
+    <clr-dg-column>Rotation Period</clr-dg-column>
+    <clr-dg-column>Orbital Period</clr-dg-column>
+    <clr-dg-column>Population</clr-dg-column>
+    <clr-dg-column>Climate</clr-dg-column>
 
-  <!-- <clr-dg-row *ngFor="let user of users">
-    <clr-dg-cell>{{ user.id }}</clr-dg-cell>
-    <clr-dg-cell>{{ user.name }}</clr-dg-cell>
-    <clr-dg-cell>{{ user.creation | date }}</clr-dg-cell>
-    <clr-dg-cell>{{ user.color }}</clr-dg-cell>
-  </clr-dg-row> -->
+    <clr-dg-row *ngFor="let planet of planets">
+      <clr-dg-cell>{{ planet.name }}</clr-dg-cell>
+      <clr-dg-cell>{{ planet.diameter }}</clr-dg-cell>
+      <clr-dg-cell>{{ planet.rotation_period }}</clr-dg-cell>
+      <clr-dg-cell>{{ planet.orbital_period}}</clr-dg-cell>
+      <clr-dg-cell>{{ planet.population}}</clr-dg-cell>
+      <clr-dg-cell>{{ planet.climate}}</clr-dg-cell>
+    </clr-dg-row>
 
-  <!-- <clr-dg-footer>{{ users.length }} users</clr-dg-footer> -->
-</clr-datagrid>
-
-<!--
-    "name": "Alderaan",
-  "diameter": "12500",
-  "rotation_period": "24",
-  "orbital_period": "364",
-  "gravity": "1 standard",
-  "population": "2000000000",
-  "climate": "temperate",
-  "terrain": "grasslands, mountains",
-  "surface_water": "40",
-  "residents": [
-    "https://swapi.co/api/people/5/",
-    "https://swapi.co/api/people/68/",
-    "https://swapi.co/api/people/81/"
-  ],
-  "films": [
-    "https://swapi.co/api/films/6/",
-    "https://swapi.co/api/films/1/"
-  ],
-  "url": "https://swapi.co/api/planets/2/",
-  "created": "2014-12-10T11:35:48.479000Z",
-  "edited": "2014-12-20T20:58:18.420000Z"
--->
+    <clr-dg-footer>{{ planets.length }} planets</clr-dg-footer>
+  </clr-datagrid>
+</ng-container>

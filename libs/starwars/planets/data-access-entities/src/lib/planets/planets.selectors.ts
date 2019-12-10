@@ -1,4 +1,19 @@
-import { planetsAdapter } from './planets.reducer';
+import { createSelector } from "@ngrx/store";
 
-const { selectEntities: selectPlanetEntities, selectIds: selectPlanetIds } = planetsAdapter.getSelectors();
-export const planetsAdapterSelectors = { selectPlanetEntities, selectPlanetIds };
+import { selectPlanetEntitiesState } from '../planets-entities.state';
+import { planetAdapterSelectors } from './planets.reducer';
+
+const selectPlanetsState = createSelector(
+  selectPlanetEntitiesState,
+  state => state.planets
+);
+
+export const selectAllPlanetEntities = createSelector(
+  selectPlanetsState,
+  planetAdapterSelectors.selectEntities
+);
+
+export const selectAllPlanets = createSelector(
+  selectPlanetsState,
+  planetAdapterSelectors.selectAll
+);

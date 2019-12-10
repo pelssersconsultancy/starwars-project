@@ -11,7 +11,7 @@ import { PlanetOverviewFacade } from '@starwars-project/starwars/planets/data-ac
 })
 export class PlanetOverviewComponent implements OnInit {
 
-  constructor(private planetOverviewFacade: PlanetOverviewFacade) { }
+  constructor(public planetOverviewFacade: PlanetOverviewFacade) { }
 
   ngOnInit() {
     this.planetOverviewFacade.requestPlanets();

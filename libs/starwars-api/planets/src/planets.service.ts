@@ -12,7 +12,7 @@ export class PlanetsService {
   constructor(private httpService: HttpService) {}
 
   getPlanets(): Observable<PagedPlanetsDto> {
-    return this.httpService.get<PlanetsAPI.PagedPlanetsModel>('https://swapi.co/api/planets').pipe(
+    return this.httpService.get<PlanetsAPI.PagedSwapiPlanetsModel>('https://swapi.co/api/planets').pipe(
       map(response => mapToPlanetDtos(response.data))
     );
   }
