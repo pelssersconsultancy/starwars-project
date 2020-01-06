@@ -7,8 +7,8 @@
     <clr-dg-column>Population</clr-dg-column>
     <clr-dg-column>Climate</clr-dg-column>
 
-    <clr-dg-placeholder *ngIf="planetOverviewData.isLoading">Loading planets...</clr-dg-placeholder>
-    <clr-dg-placeholder *ngIf="!planetOverviewData.isLoading && !planetOverviewData.planets.length">No planets found</clr-dg-placeholder>
+    <clr-dg-placeholder *ngIf="planetOverviewData.loading">Loading planets...</clr-dg-placeholder>
+    <clr-dg-placeholder *ngIf="!planetOverviewData.loading && !planetOverviewData.planets.length">No planets found</clr-dg-placeholder>
 
     <clr-dg-row *clrDgItems="let planet of planetOverviewData.planets">
       <clr-dg-cell>{{ planet.name }}</clr-dg-cell>

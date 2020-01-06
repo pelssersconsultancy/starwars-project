@@ -12,7 +12,7 @@ import { selectPlanetOverviewData } from './planet-overview.selectors';
 })
 export class PlanetOverviewFacade {
 
-  planetOverviewData$: Observable<{planets: PlanetsAPI.PlanetModel[], isLoading: boolean, error: any }>;
+  planetOverviewData$: Observable<{planets: PlanetsAPI.PlanetModel[], loading: boolean, error: any }>;
 
   constructor(private store: Store<PlanetOverviewState>) {
     this.planetOverviewData$ = this.store.select(selectPlanetOverviewData);

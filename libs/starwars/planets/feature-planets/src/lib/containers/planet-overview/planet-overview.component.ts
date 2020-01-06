@@ -15,7 +15,6 @@ export class PlanetOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.planetOverviewFacade.requestPlanets();
-
   }
 
 }

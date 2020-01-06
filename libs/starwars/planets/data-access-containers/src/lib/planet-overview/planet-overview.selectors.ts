@@ -9,19 +9,8 @@ const selectPlanetOverviewState = createSelector(
   planetContainerState => planetContainerState.planetOverview,
 );
 
-const selectIsLoading = createSelector(
-  selectPlanetOverviewState,
-  planetOverviewState => planetOverviewState.loading
-);
-
-const selectError = createSelector(
-  selectPlanetOverviewState,
-  planetOverviewState => planetOverviewState.error
-);
-
 export const selectPlanetOverviewData = createSelector(
   PlanetsSelectors.selectAllPlanets,
-  selectIsLoading,
-  selectError,
-  (planets, isLoading, error) => ({ planets, isLoading, error })
+  selectPlanetOverviewState,
+  (planets, { loading, error }) => ({ planets, loading, error })
 );
