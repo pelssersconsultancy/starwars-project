@@ -3,7 +3,9 @@
   "projects": {
     "starwars-mobile": {
       "name": "starwars-mobile",
-      "integrations": {},
+      "integrations": {
+        "capacitor": {}
+      },
       "type": "angular",
       "root": "apps/starwars-mobile"
     }

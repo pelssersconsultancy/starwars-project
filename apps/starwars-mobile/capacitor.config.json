@@ -1,0 +1,8 @@
+{
+  "appId": "nl.pelssersholding.starwarsmobile",
+  "appName": "Starwars Mobile Starter",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist/apps/starwars-mobile",
+  "cordova": {}
+}
