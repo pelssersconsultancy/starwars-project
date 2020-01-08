@@ -33,13 +33,19 @@
       "tags": ["scope:shared", "type:entity-state"]
     },
     "starwars-planets-data-access-entities": {
-      "tags": ["scope:starwars", "type:data-access-entitities"]
+      "tags": ["scope:starwars", "type:data-access-entities"]
     },
     "starwars-api-models-shared": {
       "tags": ["scope:starwars-api", "type:model"]
     },
     "starwars-planets-data-access-containers": {
       "tags": ["scope:starwars", "type:data-access-containers"]
+    },
+    "starwars-mobile-e2e": {
+      "tags": []
+    },
+    "starwars-mobile": {
+      "tags": ["scope:starwars-mobile", "type:app"]
     }
   }
 }
