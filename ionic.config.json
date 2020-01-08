@@ -1,4 +1,5 @@
 {
+  "defaultProject": "starwars-mobile",
   "projects": {
     "starwars-mobile": {
       "name": "starwars-mobile",
