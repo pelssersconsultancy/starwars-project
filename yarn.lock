@@ -1130,7 +1130,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@capacitor/cli@1.4.0":
+"@capacitor/cli@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-1.4.0.tgz#09c95aa6b1eefd0b6c9c454bf741efb792e566e2"
   integrity sha512-jY4FQ7T5XW3XXYeh2asTBO1egRmGC4cAH3WE6TUn6STvfsD/BMbfEdNTFLErA8e2huP5dzI6PHttGEldz4MR6Q==
