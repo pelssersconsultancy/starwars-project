@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "starwars-mobile": {
+      "name": "starwars-mobile",
+      "integrations": {},
+      "type": "angular",
+      "root": "apps/starwars-mobile"
+    }
+  }
+}
